@@ -19,7 +19,8 @@ public class CharacterModel extends MobModel{
     @PositiveOrZero
     private int gold;
 
-    @OneToOne(optional = true)
+    @OneToOne
+    @JoinColumn(name = "inventory_id")
     private InventoryModel inventory;
 
     @OneToOne(optional = true)
@@ -27,17 +28,6 @@ public class CharacterModel extends MobModel{
 
     public CharacterModel() {
     }
-
-//    public CharacterModel(int id, String name, Long xp, int level,
-//                          int hitPoints, int strength, int defense,
-//                          WeaponModel equipedWeapon, ConditionStatusEnum condition,
-//                          int gold, InventoryModel inventory,
-//                          SpecialItemInventoryModel collectableInventory) {
-//        super(name, xp, level, hitPoints, strength, defense, equipedWeapon, condition);
-//        this.gold = gold;
-//        this.inventory = inventory;
-//        this.collectableInventory = collectableInventory;
-//    }
 
     public int getGold() {
         return gold;

@@ -17,9 +17,6 @@ public class InventoryModel {
     private ItemModel[] itens;
 
     @Column
-    private int size;
-
-    @Column
     private int inventorySize = 10;
 
     public InventoryModel() {

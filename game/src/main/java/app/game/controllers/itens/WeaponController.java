@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/weapons")
+@RequestMapping("/itens/weapons")
 public class WeaponController {
 
     @Autowired
@@ -30,6 +30,7 @@ public class WeaponController {
         WeaponModel weaponModel = new WeaponModel();
         BeanUtils.copyProperties(weaponRequest, weaponModel);
         weaponModel.setLevel();
+        weaponModel.setId(weaponService.findLastWeaponId());
         return ResponseEntity.status(HttpStatus.CREATED).body(weaponService.save(weaponModel));
     }
 

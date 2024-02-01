@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 public interface CharacterRepository extends JpaRepository<CharacterModel, Integer> {
 
@@ -14,4 +16,9 @@ public interface CharacterRepository extends JpaRepository<CharacterModel, Integ
     @Transactional
     @Query("update CharacterModel c set c.level = ?2 where c.id = ?1")
     void updateLevel(int idCharacter, int level);
+
+    @Query("SELECT id FROM CharacterModel ORDER BY id DESC")
+    List<Integer> findLastCharacterId();
+
+
 }

@@ -13,7 +13,6 @@ import javax.validation.constraints.Positive;
 public abstract class MobModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(nullable = false)

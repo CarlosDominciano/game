@@ -16,9 +16,6 @@ public class SpecialItemInventoryModel {
     @Column(nullable = false)
     private SpecialItemModel[] itens;
 
-    @Column(nullable = false)
-    private int size;
-
     @Column
     private int inventorySize = 10;
 

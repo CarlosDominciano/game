@@ -3,8 +3,12 @@ package app.game.enums.weaponsEnums;
 
 public enum WeaponRangeTypeEnum {
 
-    MELEE(1),
-    RANGED(2);
+    MELEE_SHORT(1),
+    MELEE_MEDIUM(2),
+    MELEE_LONG(3),
+    RANGED_SHORT(4),
+    RANGED_MEDIUM(5),
+    RANGED_LONG(6);
 
     private int code;
 

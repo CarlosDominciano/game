@@ -15,12 +15,20 @@ public class WeaponService {
     @Autowired
     WeaponRepository weaponRepository;
 
+    // Database Methods
     @Transactional
     public WeaponModel save(WeaponModel weaponModel) {
         return weaponRepository.save(weaponModel);
     }
     public List<WeaponModel> findAll() {
         return  weaponRepository.findAll();
+    }
+    public int findLastWeaponId() {
+        List<Integer> lastId = weaponRepository.findLastWeaponId();
+        if (lastId.isEmpty()) {
+            return 1;
+        }
+        return lastId.get(0)+1;
     }
     public boolean existsById(int id) {
         return weaponRepository.existsById(id);
@@ -37,5 +45,8 @@ public class WeaponService {
     public void updateLevel(int idWeapon, int level) {
         weaponRepository.updateLevel(idWeapon, level);
     }
+
+
+    // Controller Methods
 
 }
